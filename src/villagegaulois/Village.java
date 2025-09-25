@@ -119,14 +119,15 @@ public class Village {
 			int nbEtalVide = 0;
 			for (int i = 0; i < nbEtals; i++) {
 				if (etals[i].isEtalOccupe()) {
-					str.append(etals[i].getVendeur()+ " vend " + "\n" ); //TODO accéder au produit + quantity
+					str.append(etals[i].afficherEtal());
 				} else {
 					nbEtalVide++;
 				}
 			}
-			str.append("Il reste " +nbEtalVide+ " étals non utilisés dans le marché.\n");
+			str.append("Il reste " + nbEtalVide + " étals non utilisés dans le marché.\n");
 
 			return str.toString();
 		}
+
 	}
 }
