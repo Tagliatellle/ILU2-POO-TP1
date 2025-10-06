@@ -30,7 +30,7 @@ public class Etal {
 		StringBuilder chaine = new StringBuilder();
 		try {
 			chaine.append("Le vendeur " + vendeur.getNom() + " quitte son étal, ");
-		} catch (NullPointersException e) {
+		} catch (NullPointerException e) {
 			chaine.append("Le vendeur n'est plus sur cette etal.\n");
 		}
 		
@@ -68,7 +68,7 @@ public class Etal {
 			return "";
 		}
 		
-		if (quantite<0) {
+		if (quantiteAcheter<0) {
 			throw new QuantiteNonConformeException("La quantité" + quantite + "n'est pas une valeur positive");
 		}
 		
