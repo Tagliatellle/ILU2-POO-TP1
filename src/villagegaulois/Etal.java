@@ -57,6 +57,10 @@ public class Etal {
 		
 		StringBuilder chaine = new StringBuilder();
 		
+		if (vendeur==null) {
+			throw new EtalNonOccupeException("L'étal n'est pas occupé");
+		}
+		
 		try {
 			chaine.append(acheteur.getNom() + " veut acheter " + quantiteAcheter + " " + produit + " à " + vendeur.getNom());
 		} catch (Exception e) {
@@ -107,6 +111,27 @@ public class Etal {
 		}
 		
 		public QuantiteNonConformeException(String message,Throwable cause) {
+			super(message,cause);
+		}
+	}
+	
+	public class EtalNonOccupeException extends IllegalStateException {
+		
+		private static final long serialVersionUID = 1L;
+		
+		public EtalNonOccupeException() {
+	
+		}
+
+		public EtalNonOccupeException(String message) {
+			super(message);
+		}
+		
+		public EtalNonOccupeException(Throwable cause) {
+			super(cause);
+		}
+		
+		public EtalNonOccupeException(String message,Throwable cause) {
 			super(message,cause);
 		}
 	}
