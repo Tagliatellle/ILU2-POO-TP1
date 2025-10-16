@@ -63,7 +63,7 @@ public class Etal {
 		
 		try {
 			chaine.append(acheteur.getNom() + " veut acheter " + quantiteAcheter + " " + produit + " à " + vendeur.getNom());
-		} catch (Exception e) {
+		} catch (NullPointerException e) {
 			System.out.println(e.getStackTrace());
 			return "";
 		}
